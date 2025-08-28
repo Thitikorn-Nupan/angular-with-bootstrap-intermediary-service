@@ -1,0 +1,17 @@
+<dynamic-dialog-form
+ [visible]="visible"
+ [cancelAble]="cancelAble"
+ [dialogTitle]="dialogTitle"
+ [formGroup]="formGroup"
+ [dynamicValidationsForm]="dynamicValidationsForm"
+ (cancelEvent)="setCancelEventDialogConfirm()"
+ (submitEvent)="setSubmitEventFormGroup()"
+ (clearEvent)="setClearEventFormGroup()"
+ (getFormGroup)="setInitialFormGroup($event)">
+</dynamic-dialog-form>
+
+<ng-container *ngIf="displayResultFormGroup">
+  <div class="alert alert-primary w-75" style="margin: 0 auto" role="alert">
+    {{resultFormGroup}}
+  </div>
+</ng-container>

@@ -1,0 +1,14 @@
+<dynamic-validation-form
+   [formTitle]="formTitle"
+   [formGroup]="formGroup"
+   [dynamicValidationsForm]="dynamicValidationsForm"
+   (getFormGroup)="setInitialFormGroup($event)"
+   (submitEvent)="setSubmitEventFormGroup()"
+   (clearEvent)="setClearEventFormGroup()">
+</dynamic-validation-form>
+<br/>
+<ng-container *ngIf="displayResultFormGroup">
+  <div class="alert alert-primary w-75" style="margin: 0 auto" role="alert">
+    {{resultFormGroup}}
+  </div>
+</ng-container>

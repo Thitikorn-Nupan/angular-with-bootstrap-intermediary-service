@@ -1,0 +1,26 @@
+<!-- Tree Table -->
+<dynamic-table
+ [tableTitle]="tableTitle"
+ [data]="data"
+ [subData]="subData"
+ [headerColumns]="headerColumns"
+ [subHeaderColumns]="subHeaderColumns"
+ [dataId]="dataId"
+ [enableNestedTable]="enableNestedTable"
+ (editEvent)="setEditEvent($event)"
+ (removeEvent)="setRemoveEvent($event)"
+ (treeTableEvent)="setTreeTableEvent($event)"
+ (closeTreeTableEvent)="setCloseTreeTableEvent()"
+ (getData)="setInitialData($event)">
+</dynamic-table>
+
+
+<!-- Common Table -->
+<dynamic-table
+  [tableTitle]="tableTitleTest"
+  [data]="dataTest"
+  [headerColumns]="headerColumnsTest"
+  (editEvent)="setEditEventTest($event)"
+  (removeEvent)="setRemoveEventTest($event)"
+  (getData)="setInitialDataTest($event)">
+</dynamic-table>
