@@ -94,14 +94,12 @@
         <!--  *** date -->
         <ng-container *ngIf="dynamicValidationForm.isDate">
           <div class="mb-3">
-            <div class="form-check">
               <label class="form-label" [for]="dynamicValidationForm.id">{{ dynamicValidationForm.label }}</label>
               <input [ngClass]="{ 'is-invalid' :  formGroup.get(dynamicValidationForm.formControlName)?.invalid , 'is-valid' : formGroup.get(dynamicValidationForm.formControlName)?.valid}" [formControlName]="dynamicValidationForm.formControlName" [id]="dynamicValidationForm.id" type="date" class="form-control"  required> <!-- why this checkbox can't bind -->
               <div *ngIf="formGroup.get(dynamicValidationForm.formControlName)?.errors?.['required']" class="invalid-feedback" >
                 {{dynamicValidationForm.invalidMessage}}
               </div>
             </div>
-          </div>
           <div *ngIf="formGroup.get(dynamicValidationForm.formControlName)?.value" class="invalid-feedback" >
             {{dynamicValidationForm.invalidMessage}}
           </div>
