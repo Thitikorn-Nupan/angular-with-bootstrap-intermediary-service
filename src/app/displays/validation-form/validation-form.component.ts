@@ -162,15 +162,14 @@ export class ValidationFormComponent implements OnInit {
     this.dynamicValidationsForm.push(saveFieldAsCheckbox) // as checkbox
     this.dynamicValidationsForm.push(dateFieldAsDate) // as date
 
-
   }
 
   // very importance for working this.formGroup on this child component
-  protected setInitialFormGroup($event: FormGroup) {
+  protected setInitialFormGroup($event: FormGroup) : void {
     this.formGroup = $event;
   }
 
-  protected setSubmitEventFormGroup() {
+  protected setSubmitEventFormGroup() : void {
     console.log('get submit')
     if (this.formGroup.valid) {
       this.displayResultFormGroup = true
@@ -190,9 +189,12 @@ export class ValidationFormComponent implements OnInit {
     }
   }
 
-  protected setClearEventFormGroup() {
+  protected setClearEventFormGroup() : void {
     console.log('get clear')
     this.formGroup.reset()
+    this.formGroup.patchValue({
+      city : 0
+    })
     this.displayResultFormGroup = false
   }
 }

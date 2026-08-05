@@ -6,14 +6,14 @@ import {DynamicDialogConfirm} from "../../entities/dynamic-dialog-confirm";
   templateUrl: './dynamic-dialog-confirm.component.html',
   styleUrl: './dynamic-dialog-confirm.component.css'
 })
-export class DynamicDialogConfirmComponent  {
+export class DynamicDialogConfirmComponent {
 
   @Input()
-  public visible!: boolean ;
+  public visible!: boolean;
   @Input()
-  public cancelAble!: boolean ;
+  public cancelAble!: boolean;
   @Input()
-  public dynamicDialogConfirm! :DynamicDialogConfirm
+  public dynamicDialogConfirm!: DynamicDialogConfirm
   @Output()
   public okEvent: EventEmitter<any> = new EventEmitter();
   @Output()
@@ -21,16 +21,16 @@ export class DynamicDialogConfirmComponent  {
   @Output()
   public cancelEvent: EventEmitter<any> = new EventEmitter();
 
-
-  protected onOk() {
+  protected onOk() : void {
     this.okEvent.emit()
   }
 
-  protected onClose() {
+  protected onClose() : void {
     this.closeEvent.emit()
   }
 
-  protected onCancel() {
+  protected onCancel() : void {
     this.cancelEvent.emit()
   }
+
 }

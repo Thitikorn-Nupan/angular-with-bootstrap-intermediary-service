@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { FormGroup} from "@angular/forms";
+import {FormGroup} from "@angular/forms";
 import {DynamicValidationForm} from "../../entities/dynamic-validation-form";
 
 @Component({
@@ -9,17 +9,17 @@ import {DynamicValidationForm} from "../../entities/dynamic-validation-form";
 })
 export class DynamicDialogFormComponent implements OnInit {
   @Input()
-  public visible!: boolean ;
+  public visible!: boolean;
   @Input()
-  public cancelAble!: boolean ;
+  public cancelAble!: boolean;
   @Input()
-  public dialogTitle!: string ;
+  public dialogTitle!: string;
   @Input()
   public formGroup!: FormGroup;
   @Input()
   public dynamicValidationsForm!: DynamicValidationForm[];
 
-  public isSubmit!: boolean ;
+  public isSubmit!: boolean;
 
   @Output()
   public submitEvent: EventEmitter<any> = new EventEmitter();
@@ -36,18 +36,17 @@ export class DynamicDialogFormComponent implements OnInit {
     }
   }
 
-
   protected onSubmit(): void {
     this.submitEvent?.emit();
     this.isSubmit = true
   }
 
-  protected onClear() {
+  protected onClear() : void   {
     this.clearEvent?.emit();
     this.isSubmit = false
   }
 
-  protected onCancel() {
+  protected onCancel(): void  {
     this.cancelEvent.emit()
   }
 

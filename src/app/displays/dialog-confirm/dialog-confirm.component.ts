@@ -26,6 +26,7 @@ export class DialogConfirmComponent implements OnInit {
       content : 'Are you want to delete?',
       type : 'confirm'
     }*/
+
     this.dynamicDialogConfirm = {
       dialogTitle : 'Error Dialog',
       content : 'Create failed',
@@ -33,17 +34,17 @@ export class DialogConfirmComponent implements OnInit {
     }
   }
 
-  protected setOkEventDialogConfirm() {
+  protected setOkEventDialogConfirm() : void {
     console.log('get ok')
     this.visible = false
   }
 
-  protected setCloseEventDialogConfirm() {
+  protected setCloseEventDialogConfirm() : void {
     console.log('get close')
     this.visible = false
   }
 
-  protected setCancelEventDialogConfirm() {
+  protected setCancelEventDialogConfirm() : void {
     console.log('get cancel')
     this.visible = false
   }

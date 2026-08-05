@@ -16,7 +16,7 @@ export class DialogFormComponent implements OnInit {
   protected formGroup!: FormGroup;
 
   protected resultFormGroup!:string;
-  protected displayResultFormGroup = false;
+  protected displayResultFormGroup:boolean = false;
 
   ngOnInit(): void {
     this.visible = true;
@@ -166,11 +166,11 @@ export class DialogFormComponent implements OnInit {
     this.dynamicValidationsForm.push(dateFieldAsDate) // as date
   }
 
-  protected setInitialFormGroup($event: FormGroup) {
+  protected setInitialFormGroup($event: FormGroup) : void {
     this.formGroup = $event;
   }
 
-  protected setSubmitEventFormGroup() {
+  protected setSubmitEventFormGroup()  : void {
     console.log('get submit')
     if (this.formGroup.valid) {
       this.displayResultFormGroup = true
@@ -190,12 +190,15 @@ export class DialogFormComponent implements OnInit {
     }
   }
 
-  protected setClearEventFormGroup() {
+  protected setClearEventFormGroup() : void {
     console.log('get clear')
     this.formGroup.reset()
+    this.formGroup.patchValue({
+      city : 0
+    })
   }
 
-  protected setCancelEventDialogConfirm() {
+  protected setCancelEventDialogConfirm() : void {
     console.log('get cancel')
     this.visible = false
   }

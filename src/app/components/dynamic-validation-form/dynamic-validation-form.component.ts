@@ -32,7 +32,7 @@ export class DynamicValidationFormComponent implements OnInit {
     this.submitEvent?.emit();
   }
 
-  protected onClear() {
+  protected onClear(): void {
     this.clearEvent?.emit();
   }
 

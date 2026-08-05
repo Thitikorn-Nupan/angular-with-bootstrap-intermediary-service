@@ -35,24 +35,23 @@ export class DynamicTreeTableComponent implements OnInit {
   @Output()
   public getData: EventEmitter<any[]> = new EventEmitter();
 
-
   ngOnInit(): void {
     this.getData.emit(this.data)
   }
 
-  protected onTreeTable(row:any) {
+  protected onTreeTable(row:any) : void {
     this.treeTableEvent.emit(row)
   }
 
-  protected onEdit(row:any) {
+  protected onEdit(row:any) : void {
     this.editEvent.emit(row)
   }
 
-  protected onRemove(row:any) {
+  protected onRemove(row:any): void {
     this.removeEvent.emit(row)
   }
 
-  protected onCloseTreeTable() {
+  protected onCloseTreeTable(): void {
     this.closeTreeTableEvent.emit()
   }
 
